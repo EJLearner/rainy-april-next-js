@@ -34,7 +34,7 @@ function Contact() {
             <br />
             Reisterstown, MD 21136
             <br />
-            <a href="mailto:aprild@rainyaprilday.com">aprild@rainyaprilday.com</a>
+            <a href="mailto:contact-me@rainyaprilday.com">contact-me@rainyaprilday.com</a>
           </div>
         </StyledAboutPage>
       </ContentContainer>
