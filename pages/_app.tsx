@@ -1,11 +1,10 @@
 import type {AppProps} from 'next/app';
+import Head from 'next/head';
 import * as React from 'react';
 import {ThemeProvider, DefaultTheme} from 'styled-components';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import SEO from '../components/SEO';
 import GlobalStyle from '../components/globalstyles';
-
 
 const theme: DefaultTheme = {
   colors: {
@@ -18,8 +17,7 @@ export default function App({Component, pageProps}: AppProps) {
   return (
     <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {/* TODO before release put page titles back */}
-        <SEO><link href="/favicon.png" rel="shortcut icon" /><title>Rainy April Day Productions</title></SEO>
+        <Head><link href="/favicon.png" rel="shortcut icon" /><title>Rainy April Day Productions</title></Head>
         <Component {...pageProps} />
       </ThemeProvider>
   );
