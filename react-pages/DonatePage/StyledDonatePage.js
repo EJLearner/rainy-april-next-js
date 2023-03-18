@@ -11,14 +11,13 @@ const StyledDonatePage = styled.div`
     border-radius: 8px;
   }
 
-  .gatsby-image-wrapper,
   img {
     border-radius: 0px;
+    height: auto;
   }
 
   .top-image {
     width: 100%;
-    height: auto;
     position: absolute;
   }
 

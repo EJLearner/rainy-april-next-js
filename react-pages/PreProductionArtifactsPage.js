@@ -1,9 +1,13 @@
+import Image from 'next/image';
 import * as React from 'react';
 import styled from 'styled-components';
 
 import ContentContainer from '../components/ContentContainer';
 import Layout from '../components/Layout';
 import TopLinks from '../components/TopLinks';
+import distributionPlanPicture from '../images/distribution-plan.png';
+import marketingPlanPicture from '../images/marketing-plan2.png';
+import socialMediaPlanPicture from '../images/social-media-plan.png';
 
 const StyledPreProductionArtifactsPage = styled.div`
   h1 {
@@ -40,18 +44,18 @@ const PreProductionArtifactsPage = () => {
         <StyledPreProductionArtifactsPage>
           <h1>Pre-Production Artifacts</h1>
           <div className="wrapper">
-            {/* <a className="thumbnail-and-title" href="/Marketing-Plan.pptx">
-              <StaticImage src="../images/marketing-plan2.png" width={300} />
+            <a className="thumbnail-and-title" href="/Marketing-Plan.pptx">
+              <Image alt="Marketing Plan Thumbnail" src={marketingPlanPicture} width={300} />
               Marketing Plan
             </a>
             <a className="thumbnail-and-title" href="/Social-Media-Plan.pptx">
-              <StaticImage src="../images/social-media-plan.png" width={300} />
+              <Image alt="Social Media Plan Thumbnail" src={socialMediaPlanPicture} width={300} />
               Social Media Plan
             </a>
             <a className="thumbnail-and-title" href="/Distribution-Plan.pptx">
-              <StaticImage src="../images/distribution-plan.png" width={300} />
+              <Image alt="Distribution Plan Thumbnail" src={distributionPlanPicture} width={300} />
               Distribution Plan
-            </a> */}
+            </a>
           </div>
         </StyledPreProductionArtifactsPage>
       </ContentContainer>

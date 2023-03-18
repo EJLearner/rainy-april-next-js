@@ -1,10 +1,13 @@
-// import {StaticImage} from 'gatsby-plugin-image';
+import Image from 'next/image';
 import React, {useState} from 'react';
 
 import Button from '../../components/Button';
 import ContentContainer from '../../components/ContentContainer';
 import Layout from '../../components/Layout';
 import TopLinks from '../../components/TopLinks';
+import topImage from '../../images/donate-top.png';
+import blueLogo from '../../images/rainy-logo-blue.png';
+import supportPicture from '../../images/support-picture.png';
 import {misc} from '../../utils/constants';
 
 import StyledDonatePage from './StyledDonatePage';
@@ -111,14 +114,14 @@ function DonatePage() {
     <Layout>
       <TopLinks />
       <ContentContainer>
-        {/* <StyledDonatePage>
-          <StaticImage alt={misc.PRESENTATIONAL_IMAGE} className="top-image" src="../../images/donate-top.png" />
+        <StyledDonatePage>
+          <Image alt={misc.PRESENTATIONAL_IMAGE} className="top-image" src={topImage} />
           <div className="content-wrapper">
             <div className="content">
               <div className="image-thanks-wrapper">
-                <StaticImage alt="film crew" className="support-image" src="../../images/support-picture.png" />
+                <Image alt="film crew" className="support-image" src={supportPicture} />
                 <div className="logo-and-text">
-                  <StaticImage alt="company logo" className="logo" src="../../images/rainy-logo-blue.png" />
+                  <Image alt="company logo" className="logo" src={blueLogo} />
                   <h2>Your Support Means The World</h2>
                   <p>
                     Thank you so very much for your donation—and even more special—thank you for your support of this
@@ -144,7 +147,7 @@ function DonatePage() {
               </div>
             </div>
           </div>
-        </StyledDonatePage> */}
+        </StyledDonatePage>
       </ContentContainer>
     </Layout>
   );

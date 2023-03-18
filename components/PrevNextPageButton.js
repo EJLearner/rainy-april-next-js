@@ -1,47 +1,37 @@
-import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
+import PropTypes from 'prop-types';
 import * as React from 'react';
-// TODO before release - figure this out later
-// import {BsChevronRight as RightChevron, BsChevronLeft as LeftChevron} from 'react-icons/bs';
 import styled from 'styled-components';
 
 import Button from './Button';
-
-const RightChevron = () => 'Right';
-const LeftChevron = () => 'Left';
 
 const StyledPrevNextPageButton = styled(Button)`
   color: var(--white);
   position: absolute;
   top: 40vh;
+  font-size: 60px;
 
   &:hover {
     color: var(--accent-yellow);
   }
 
-  &.right-arrow {
+  &.right {
     right: var(--arrow-space-from-edge);
   }
 
-  &.left-arrow {
+  &.left {
     left: var(--arrow-space-from-edge);
   }
 `;
 
 function PrevNextPageButton({path, title, type}) {
   const router = useRouter();
-  let Icon = RightChevron;
-  let rightOrLeftClass = 'right-arrow';
 
-  if (type === 'previous') {
-    Icon = LeftChevron;
-    rightOrLeftClass = 'left-arrow';
-  }
+  const rightOrLeft = type === 'previous' ? 'left' : 'right';
 
-  const computedClassName = `arrow ${rightOrLeftClass}`;
   return (
-    <StyledPrevNextPageButton className={computedClassName} onClick={() => router.push(path)} title={title}>
-      <Icon size="60px" />
+    <StyledPrevNextPageButton className={rightOrLeft} onClick={() => router.push(path)} title={title}>
+      <i className={`bi bi-chevron-${rightOrLeft}`} />
     </StyledPrevNextPageButton>
   );
 }

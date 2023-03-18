@@ -6,9 +6,9 @@ import Layout from '../components/Layout';
 import PrevNextPageButton from '../components/PrevNextPageButton';
 import TopLinks, {pageTypes} from '../components/TopLinks';
 import ajInterViewPicture from '../images/aj-tipsy-interview.jpg';
-import tipsyBackgroundPicture from '../images/main-picture.png';
 import tipsyPpa from '../images/tipsyppa.png';
 import routePaths from '../utils/routePaths';
+const tipsyBackgroundPublicSource = '/tipsy-background.png';
 
 const StyledTipsyPage = styled.div`
   color: var(--white);
@@ -102,7 +102,7 @@ const StyledTipsyPage = styled.div`
 `;
 
 const TipsyPage = () => {
-  const backgroundStyle = {backgroundImage: `url(${tipsyBackgroundPicture})`};
+  const backgroundStyle = {backgroundImage: `url(${tipsyBackgroundPublicSource})`};
 
   return (
     <Layout>

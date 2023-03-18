@@ -1,4 +1,5 @@
 // import {StaticImage} from 'gatsby-plugin-image';
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -6,11 +7,10 @@ import ContentContainer from '../../components/ContentContainer';
 import Filmmaker from '../../components/Filmmaker';
 import Layout from '../../components/Layout';
 import TopLinks, {pageTypes} from '../../components/TopLinks';
+import aprilHeadshot from '../../images/april-bio.jpg';
+import jaiHeadshot from '../../images/jai-bio.jpg';
+import sholaHeadshot from '../../images/shola-bio.jpg';
 import {misc} from '../../utils/constants';
-
-const jaiHeadshot = '../../images/jai-bio.jpg';
-const sholaHeadshot = '../../images/shola-bio.jpg';
-const aprilHeadshot = '../../images/april-bio.jpg';
 
 const StyledInfoAndInterViews = styled.div`
   display: flex;
@@ -27,11 +27,8 @@ function FilmmakersPage() {
       <TopLinks pageType={pageTypes.LIGHT} />
       <ContentContainer>
         <StyledInfoAndInterViews>
-          {/* <div className="filmmakers-info">
-            <Filmmaker
-              imageRender={<StaticImage alt={misc.PRESENTATIONAL_IMAGE} src={aprilHeadshot} />}
-              name="April Day"
-            >
+          <div className="filmmakers-info">
+            <Filmmaker imageRender={<Image alt={misc.PRESENTATIONAL_IMAGE} src={aprilHeadshot} />} name="April Day">
               <p>
                 April Day attended the UCF Film School and earned a BFA degree in Filmmaking with a concentration in
                 screenwriting. Writing scripts and short stories gives her an outlet to pour out her thoughts and
@@ -43,10 +40,7 @@ function FilmmakersPage() {
                 the society we would like to see.
               </p>
             </Filmmaker>
-            <Filmmaker
-              imageRender={<StaticImage alt={misc.PRESENTATIONAL_IMAGE} src={sholaHeadshot} />}
-              name="Shola Ajayi"
-            >
+            <Filmmaker imageRender={<Image alt={misc.PRESENTATIONAL_IMAGE} src={sholaHeadshot} />} name="Shola Ajayi">
               <p>
                 Shola Ajayi is a filmmaker and educator based in NYC and Lagos, Nigeria. Shola’s work has been featured
                 on What’s Up Africa! Africa is A Country, African Independent Television, Showmax, Big Hero and Sarasota
@@ -54,7 +48,7 @@ function FilmmakersPage() {
                 based organizations empowering disenfranchised groups.
               </p>
             </Filmmaker>
-            <Filmmaker imageRender={<StaticImage alt={misc.PRESENTATIONAL_IMAGE} src={jaiHeadshot} />} name="Jai Rice">
+            <Filmmaker imageRender={<Image alt={misc.PRESENTATIONAL_IMAGE} src={jaiHeadshot} />} name="Jai Rice">
               <p>
                 Jai Rice is an award-winning video producer/editor whose work has been recognized by the Webby Awards
                 and the Tellys. Jai has produced a range of projects including an award-winning documentary on
@@ -62,7 +56,7 @@ function FilmmakersPage() {
                 NOW with Alex Wagner. Aside from his film work, he is also a published fashion photographer.
               </p>
             </Filmmaker>
-          </div> */}
+          </div>
         </StyledInfoAndInterViews>
       </ContentContainer>
     </Layout>

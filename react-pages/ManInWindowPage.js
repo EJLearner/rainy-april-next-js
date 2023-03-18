@@ -6,15 +6,17 @@ import Layout from '../components/Layout';
 import PrevNextPageButton from '../components/PrevNextPageButton';
 import TopLinks, {pageTypes} from '../components/TopLinks';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
-import tmitwBackgroundPicture from '../images/tmitw-background.png';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
 import routePaths from '../utils/routePaths';
+
+const tmitwBackgroundPublicSource = '/tmitw-background.png';
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);
   letter-spacing: 1.5px;
 
   .main-page-and-background {
+    background-color: black;
     min-height: 100vh;
     height: 100%;
     background-repeat: no-repeat;
@@ -102,8 +104,8 @@ const StyledManInPageWindow = styled.div`
 `;
 
 const ManInWindowPage = () => {
-  // TODO see if I can optimize this with gatsby
-  const backgroundStyle = {backgroundImage: `url(${tmitwBackgroundPicture})`};
+  // TODO see if I can optimize this with next
+  const backgroundStyle = {backgroundImage: `url(${tmitwBackgroundPublicSource})`};
 
   return (
     <Layout>

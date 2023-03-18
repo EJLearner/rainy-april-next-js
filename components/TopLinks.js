@@ -1,10 +1,13 @@
 // import {graphql, Link, useStaticQuery} from 'gatsby';
 // import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import Image from 'next/image';
 import Link from 'next/link';
 import propTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import lightImage from '../images/rainy-april-day-logo-inverted.png';
+import darkImage from '../images/rainy-april-day-logo.png';
 import routePaths from '../utils/routePaths';
 
 const pageTypes = {
@@ -87,23 +90,6 @@ function renderLinksArray(linksInfo) {
 }
 
 function TopLinks(props) {
-  // const data = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       darkLogo: file(relativePath: {eq: "rainy-april-day-logo.png"}) {
-  //         childImageSharp {
-  //           gatsbyImageData
-  //         }
-  //       }
-  //       lightLogo: file(relativePath: {eq: "rainy-april-day-logo-inverted.png"}) {
-  //         childImageSharp {
-  //           gatsbyImageData
-  //         }
-  //       }
-  //     }
-  //   `
-  // );
-
   const {isHome = false, pageType = pageTypes.LIGHT} = props;
 
   const linksInfo = [
@@ -115,17 +101,11 @@ function TopLinks(props) {
   const className = ['top-links', isHome && 'home-top-links', pageType === pageTypes.DARK ? 'dark' : 'light']
     .filter((name) => name)
     .join(' ');
-  // const darkImage = getImage(data.darkLogo.childImageSharp.gatsbyImageData);
-  // const lightImage = getImage(data.lightLogo.childImageSharp.gatsbyImageData);
 
   return (
     <StyledTopLinks className={className}>
       <Link className="site-logo-link" href={routePaths.MAIN}>
-        {/* <GatsbyImage
-          alt="Site Logo"
-          className="site-logo"
-          image={pageType === pageTypes.DARK ? lightImage : darkImage}
-        /> */}
+        <Image alt="Site Logo" className="site-logo" src={pageType === pageTypes.DARK ? lightImage : darkImage} />
       </Link>
       <div className="links-array-wrapper">{renderLinksArray(linksInfo)}</div>
     </StyledTopLinks>

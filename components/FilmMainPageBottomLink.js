@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import propTypes from 'prop-types';
 import * as React from 'react';
@@ -17,6 +18,7 @@ const StyledFilmMainPageBottomLink = styled.div`
     img {
       transition: all 0.2s ease-out;
       transform-origin: bottom;
+      height: auto;
     }
 
     &:hover {
@@ -41,14 +43,21 @@ const StyledFilmMainPageBottomLink = styled.div`
 `;
 
 function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external, isFile}) {
+  console.log('🚀 ~ file: FilmMainPageBottomLink.js:46 ~ FilmMainPageBottomLink ~ imageSource:', imageSource);
+  const contents = (
+    <>
+      {/* TODO use query to load these image, use TopLinks as guide */}
+      <Image alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} />
+      <div className="title">{title}</div>
+      <div className="subtitle">{subtitle}</div>
+    </>
+  );
+
   if (isFile || external) {
     return (
       <StyledFilmMainPageBottomLink>
         <a className="bottom-link" href={linkTo} rel="noreferrer" target="_blank">
-          {/* TODO use query to load these image, use TopLinks as guide */}
-          <img alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} />
-          <div className="title">{title}</div>
-          <div className="subtitle">{subtitle}</div>
+          {contents}
         </a>
       </StyledFilmMainPageBottomLink>
     );
@@ -57,10 +66,7 @@ function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external,
   return (
     <StyledFilmMainPageBottomLink>
       <Link className="bottom-link" href={linkTo}>
-        {/* TODO use query to load these image, use TopLinks as guide */}
-        <img alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} />
-        <div className="title">{title}</div>
-        <div className="subtitle">{subtitle}</div>
+        {contents}
       </Link>
     </StyledFilmMainPageBottomLink>
   );
