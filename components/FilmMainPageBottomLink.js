@@ -46,7 +46,7 @@ function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external,
   const contents = (
     <>
       {/* TODO use query to load these image, use TopLinks as guide */}
-      <Image alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} />
+      <Image alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} width={600} />
       <div className="title">{title}</div>
       <div className="subtitle">{subtitle}</div>
     </>
@@ -73,7 +73,7 @@ function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external,
 
 FilmMainPageBottomLink.propTypes = {
   external: propTypes.bool,
-  imageSource: propTypes.string.isRequired,
+  imageSource: propTypes.object.isRequired,
   isFile: propTypes.bool,
   linkTo: propTypes.string.isRequired,
   subtitle: propTypes.string.isRequired,

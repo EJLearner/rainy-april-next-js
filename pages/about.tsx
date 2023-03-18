@@ -35,6 +35,7 @@ const StyledAboutPage = styled.div`
 function AboutPage() {
   return (
     <Layout>
+      <SEO pageTitle="About" />
       <TopLinks />
       <ContentContainer>
         <StyledAboutPage>
@@ -66,4 +67,3 @@ function AboutPage() {
 
 export default AboutPage;
 
-export const Head = () => <SEO pageTitle="About" />;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import ContentContainer from '../components/ContentContainer';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import TopLinks from '../components/TopLinks';
 import distributionPlanPicture from '../images/distribution-plan.png';
 import marketingPlanPicture from '../images/marketing-plan2.png';
@@ -39,6 +40,7 @@ const StyledPreProductionArtifactsPage = styled.div`
 const PreProductionArtifactsPage = () => {
   return (
     <Layout>
+      <SEO pageTitle="TMITW Pre-Production" />
       <TopLinks />
       <ContentContainer>
         <StyledPreProductionArtifactsPage>

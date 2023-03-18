@@ -22,6 +22,7 @@ const StyledAboutPage = styled.div`
 function Contact() {
   return (
     <Layout>
+      <SEO pageTitle="Contact" />
       <TopLinks />
       <ContentContainer>
         <StyledAboutPage>
@@ -42,5 +43,3 @@ function Contact() {
 }
 
 export default Contact;
-
-export const Head = () => <SEO pageTitle="Contact" />;

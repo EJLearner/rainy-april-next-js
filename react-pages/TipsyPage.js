@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import FilmMainPageBottomLink from '../components/FilmMainPageBottomLink';
 import Layout from '../components/Layout';
 import PrevNextPageButton from '../components/PrevNextPageButton';
+import SEO from '../components/SEO';
 import TopLinks, {pageTypes} from '../components/TopLinks';
 import ajInterViewPicture from '../images/aj-tipsy-interview.jpg';
 import tipsyPpa from '../images/tipsyppa.png';
@@ -106,6 +107,7 @@ const TipsyPage = () => {
 
   return (
     <Layout>
+      <SEO pageTitle="Tipsy" />
       <StyledTipsyPage>
         <div className="main-page-and-background" style={backgroundStyle}>
           <div className="gradient-mask">

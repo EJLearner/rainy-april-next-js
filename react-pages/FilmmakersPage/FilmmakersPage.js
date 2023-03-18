@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import ContentContainer from '../../components/ContentContainer';
 import Filmmaker from '../../components/Filmmaker';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import TopLinks, {pageTypes} from '../../components/TopLinks';
 import aprilHeadshot from '../../images/april-bio.jpg';
 import jaiHeadshot from '../../images/jai-bio.jpg';
@@ -24,6 +25,7 @@ const StyledInfoAndInterViews = styled.div`
 function FilmmakersPage() {
   return (
     <Layout>
+      <SEO pageTitle="TMITW Filmmakers" />
       <TopLinks pageType={pageTypes.LIGHT} />
       <ContentContainer>
         <StyledInfoAndInterViews>

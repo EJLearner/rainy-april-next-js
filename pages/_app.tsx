@@ -1,9 +1,9 @@
 import type {AppProps} from 'next/app';
-import Head from 'next/head';
 import * as React from 'react';
 import {ThemeProvider, DefaultTheme} from 'styled-components';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+import SEO from '../components/SEO';
 import GlobalStyle from '../components/globalstyles';
 
 
@@ -19,7 +19,7 @@ export default function App({Component, pageProps}: AppProps) {
     <ThemeProvider theme={theme}>
         <GlobalStyle />
         {/* TODO before release put page titles back */}
-        <Head><link href="/favicon.png" rel="shortcut icon" /><title>Rainy April Day Productions</title></Head>
+        <SEO><link href="/favicon.png" rel="shortcut icon" /><title>Rainy April Day Productions</title></SEO>
         <Component {...pageProps} />
       </ThemeProvider>
   );

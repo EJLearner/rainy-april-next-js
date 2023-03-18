@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import Button from '../../components/Button';
 import ContentContainer from '../../components/ContentContainer';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import TopLinks from '../../components/TopLinks';
 import topImage from '../../images/donate-top.png';
 import blueLogo from '../../images/rainy-logo-blue.png';
@@ -112,6 +113,7 @@ function DonatePage() {
 
   return (
     <Layout>
+      <SEO pageTitle="Donate" />
       <TopLinks />
       <ContentContainer>
         <StyledDonatePage>
@@ -119,9 +121,10 @@ function DonatePage() {
           <div className="content-wrapper">
             <div className="content">
               <div className="image-thanks-wrapper">
-                <Image alt="film crew" className="support-image" src={supportPicture} />
+                {/* TODO - low priority - figure out why I get Image component warning here */}
+                <Image alt="film crew" className="support-image" src={supportPicture} width={400} />
                 <div className="logo-and-text">
-                  <Image alt="company logo" className="logo" src={blueLogo} />
+                  <Image alt="company logo" className="logo" src={blueLogo} width={50} />
                   <h2>Your Support Means The World</h2>
                   <p>
                     Thank you so very much for your donation—and even more special—thank you for your support of this
