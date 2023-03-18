@@ -18,7 +18,8 @@ export default function App({Component, pageProps}: AppProps) {
   return (
     <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Head><link href="/favicon.png" rel="shortcut icon" /></Head>
+        {/* TODO before release put page titles back */}
+        <Head><link href="/favicon.png" rel="shortcut icon" /><title>Rainy April Day Productions</title></Head>
         <Component {...pageProps} />
       </ThemeProvider>
   );

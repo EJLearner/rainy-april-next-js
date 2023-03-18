@@ -43,7 +43,6 @@ const StyledFilmMainPageBottomLink = styled.div`
 `;
 
 function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external, isFile}) {
-  console.log('🚀 ~ file: FilmMainPageBottomLink.js:46 ~ FilmMainPageBottomLink ~ imageSource:', imageSource);
   const contents = (
     <>
       {/* TODO use query to load these image, use TopLinks as guide */}
