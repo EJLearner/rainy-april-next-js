@@ -10,7 +10,7 @@ import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
 import routePaths from '../utils/routePaths';
 
-const tmitwBackgroundPublicSource = '/tmitw-background.png';
+const tmitwBackgroundPublicSource = '/tmitw-background.jpg';
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);

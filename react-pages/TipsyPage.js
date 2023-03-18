@@ -9,7 +9,7 @@ import TopLinks, {pageTypes} from '../components/TopLinks';
 import ajInterViewPicture from '../images/aj-tipsy-interview.jpg';
 import tipsyPpa from '../images/tipsyppa.png';
 import routePaths from '../utils/routePaths';
-const tipsyBackgroundPublicSource = '/tipsy-background.png';
+const tipsyBackgroundPublicSource = '/tipsy-background.jpg';
 
 const StyledTipsyPage = styled.div`
   color: var(--white);
