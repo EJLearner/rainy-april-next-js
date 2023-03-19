@@ -22,6 +22,7 @@ const StyledManInPageWindow = styled.div`
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url(${tmitwBackgroundPublicSource});
   }
 
   .gradient-mask {
@@ -45,22 +46,22 @@ const StyledManInPageWindow = styled.div`
     padding-right: var(--gutter-width);
     padding-bottom: 64px;
     color: var(--white);
-    width: 60%;
   }
 
   h1 {
     font-weight: normal;
-    font-size: 44px;
+    font-size: clamp(20px, 4vw, 44px);
   }
 
   .subheading {
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   .blurb {
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
+    width: 60%;
   }
 
   .trailer-link {
@@ -102,18 +103,29 @@ const StyledManInPageWindow = styled.div`
     gap: 32px;
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 800px) {
+    h1 {
+      font-weight: bold;
+    }
+
+    .blurb {
+      width: 100%;
+    }
+
+    .main-page-and-background {
+      background-image: none;
+    }
+  }
 `;
 
 const ManInWindowPage = () => {
-  // TODO see if I can optimize this with next
-  const backgroundStyle = {backgroundImage: `url(${tmitwBackgroundPublicSource})`};
-
   return (
     <>
       <SEO pageTitle="The Man in the Window" />
       <Layout>
         <StyledManInPageWindow>
-          <div className="main-page-and-background" style={backgroundStyle}>
+          <div className="main-page-and-background">
             <div className="gradient-mask">
               <TopLinks isHome pageType={pageTypes.DARK} />
               <div className="content-and-arrow-wrapper">

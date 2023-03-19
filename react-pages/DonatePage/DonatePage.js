@@ -10,6 +10,7 @@ import topImage from '../../images/donate-top.png';
 import blueLogo from '../../images/rainy-logo-blue.png';
 import supportPicture from '../../images/support-picture.png';
 import {misc} from '../../utils/constants';
+import {useScreenWidthCheck} from '../../utils/useScreenWidthCheck';
 
 import StyledDonatePage from './StyledDonatePage';
 
@@ -20,6 +21,7 @@ const MINIMUM_DONATION = 1;
 function DonatePage() {
   const [amount, setAmount] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const screenIsSmall = useScreenWidthCheck({max: 800});
 
   function validateOtherAmount(value, allowEmpty = true) {
     const validDollarAmount = /^(\d+)?(\.(\d{2})?)?$/;
@@ -117,14 +119,14 @@ function DonatePage() {
       <TopLinks />
       <ContentContainer>
         <StyledDonatePage>
-          <Image alt={misc.PRESENTATIONAL_IMAGE} className="top-image" src={topImage} />
+          {!screenIsSmall && <Image alt={misc.PRESENTATIONAL_IMAGE} className="top-image" src={topImage} />}
           <div className="content-wrapper">
             <div className="content">
               <div className="image-thanks-wrapper">
                 {/* TODO - low priority - figure out why I get Image component warning here */}
-                <Image alt="film crew" className="support-image" src={supportPicture} width={400} />
+                {!screenIsSmall && <Image alt="film crew" className="support-image" src={supportPicture} width={400} />}
                 <div className="logo-and-text">
-                  <Image alt="company logo" className="logo" src={blueLogo} width={50} />
+                  {!screenIsSmall && <Image alt="company logo" className="logo" src={blueLogo} width={50} />}
                   <h2>Your Support Means The World</h2>
                   <p>
                     Thank you so very much for your donation—and even more special—thank you for your support of this

@@ -4,10 +4,13 @@ import styled from 'styled-components';
 
 const StyledFilmmaker = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 2em;
+  gap: 32px;
 
   .headshot-and-name-column {
     width: 25%;
+    min-width: 200px;
     max-width: 400px;
   }
 
@@ -19,6 +22,7 @@ const StyledFilmmaker = styled.div`
   img {
     display: block;
     width: 100%;
+    min-width: 200px;
     height: auto;
   }
 
@@ -27,6 +31,7 @@ const StyledFilmmaker = styled.div`
     position: absolute;
     bottom: 0;
     width: 100%;
+    min-width: 200px;
     height: 30%;
   }
 
@@ -38,11 +43,12 @@ const StyledFilmmaker = styled.div`
     font-size: 110%;
     font-weight: 600;
     text-transform: uppercase;
+    width: calc(100% - 15px);
+    min-width: calc(200px - 15px);
   }
 
   .filmmaker-bio {
-    margin-left: 2em;
-    width: 50%;
+    max-width: 400px;
   }
 
   .filmmaker-bio p:first-child {
@@ -70,8 +76,6 @@ function Filmmaker(props) {
 
 Filmmaker.propTypes = {
   children: propTypes.node.isRequired,
-  // TODO find out how to pass in image location properly
-  // gatsby StaticImage passed in so that optimization can be used
   imageRender: propTypes.node.isRequired,
   name: propTypes.string.isRequired
 };

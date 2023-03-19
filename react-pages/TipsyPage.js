@@ -16,10 +16,12 @@ const StyledTipsyPage = styled.div`
   letter-spacing: 1.5px;
 
   .main-page-and-background {
+    background-color: black;
     min-height: 100vh;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url(${tipsyBackgroundPublicSource});
   }
 
   .gradient-mask {
@@ -48,17 +50,17 @@ const StyledTipsyPage = styled.div`
 
   h1 {
     font-weight: normal;
-    font-size: 44px;
+    font-size: clamp(20px, 4vw, 44px);
   }
 
   .subheading {
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   .blurb {
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
   }
 
   .trailer-link {
@@ -100,16 +102,24 @@ const StyledTipsyPage = styled.div`
     gap: 32px;
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 800px) {
+    h1 {
+      font-weight: bold;
+    }
+
+    .main-page-and-background {
+      background-image: none;
+    }
+  }
 `;
 
 const TipsyPage = () => {
-  const backgroundStyle = {backgroundImage: `url(${tipsyBackgroundPublicSource})`};
-
   return (
     <Layout>
       <SEO pageTitle="Tipsy" />
       <StyledTipsyPage>
-        <div className="main-page-and-background" style={backgroundStyle}>
+        <div className="main-page-and-background">
           <div className="gradient-mask">
             <TopLinks isHome pageType={pageTypes.DARK} />
             <div className="content-and-arrow-wrapper">

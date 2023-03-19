@@ -136,6 +136,22 @@ const StyledDonatePage = styled.div`
   button:hover {
     filter: brightness(0.8);
   }
+
+  @media screen and (max-width: 800px) {
+    .content {
+      flex-direction: column;
+      margin: 16px;
+      gap: 0;
+    }
+
+    .image-thanks-wrapper {
+      width: 100%;
+    }
+
+    .donation-options-box {
+      align-self: center;
+    }
+  }
 `;
 
 export default StyledDonatePage;

@@ -9,7 +9,7 @@ const StyledPrevNextPageButton = styled(Button)`
   color: var(--white);
   position: absolute;
   top: 40vh;
-  font-size: 60px;
+  font-size: clamp(32px, 6vw, 60px);
 
   &:hover {
     color: var(--accent-yellow);

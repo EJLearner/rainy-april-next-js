@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     --black: rgb(12, 12, 12);
     --blue: rgb(0, 112, 192);
     --gray: rgb(127, 127, 127);
-    --gutter-width: 70px;
+    --gutter-width: clamp(35px, 8vw, 70px);
     --arrow-space-from-edge: 3px;
     font-family: 'Segoe UI', 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   }

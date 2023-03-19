@@ -1,7 +1,5 @@
-// import {StaticImage} from 'gatsby-plugin-image';
 import Image from 'next/image';
 import React from 'react';
-import styled from 'styled-components';
 
 import ContentContainer from '../../components/ContentContainer';
 import Filmmaker from '../../components/Filmmaker';
@@ -13,22 +11,13 @@ import jaiHeadshot from '../../images/jai-bio.jpg';
 import sholaHeadshot from '../../images/shola-bio.jpg';
 import {misc} from '../../utils/constants';
 
-const StyledInfoAndInterViews = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  & > .filmmakers-info {
-    flex: 2 1 0;
-  }
-`;
-
 function FilmmakersPage() {
   return (
     <Layout>
       <SEO pageTitle="TMITW Filmmakers" />
       <TopLinks pageType={pageTypes.LIGHT} />
       <ContentContainer>
-        <StyledInfoAndInterViews>
+        <div>
           <div className="filmmakers-info">
             <Filmmaker imageRender={<Image alt={misc.PRESENTATIONAL_IMAGE} src={aprilHeadshot} />} name="April Day">
               <p>
@@ -59,7 +48,7 @@ function FilmmakersPage() {
               </p>
             </Filmmaker>
           </div>
-        </StyledInfoAndInterViews>
+        </div>
       </ContentContainer>
     </Layout>
   );

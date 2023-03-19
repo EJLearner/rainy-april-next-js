@@ -20,15 +20,19 @@ const StyledTopLinks = styled.div`
   text-transform: uppercase;
   justify-content: space-between;
   display: flex;
+  gap: 16px;
   align-items: center;
   padding: 10px var(--gutter-width);
 
   .links-array-wrapper {
     display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    min-width: 260px;
+    max-width: 360px;
   }
 
   .links-array-wrapper a {
-    margin-left: 2em;
     border-radius: 6px;
     padding: 0.3em 0.5em;
     text-decoration: none;
@@ -60,6 +64,7 @@ const StyledTopLinks = styled.div`
 
   .site-logo-link {
     display: block;
+    flex-shrink: 0;
 
     &:hover {
       opacity: 0.8;
@@ -67,7 +72,9 @@ const StyledTopLinks = styled.div`
   }
 
   .site-logo {
-    width: 80px;
+    min-width: 40px;
+    width: 10vw;
+    max-width: 80px;
     height: auto;
   }
 
