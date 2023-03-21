@@ -160,7 +160,13 @@ const TipsyPage = () => {
               subtitle="Filmmaker Interviews"
               title="Learn More"
             />
-            {/* TODO make gallery */}
+            <FilmMainPageBottomLink
+              // TODO: before release - add gallery picture
+              imageSource={tipsyPpa}
+              linkTo={routePaths.TIPSY_GALLERY}
+              subtitle="Pre-Production Artifacts"
+              title="Learn More"
+            />
             <FilmMainPageBottomLink
               imageSource={tipsyPpa}
               isFile

@@ -19,21 +19,30 @@ const allPictures = [
 ];
 
 const StyledTipsyGalleryPage = styled.div`
+  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
 
-  .main-picture {
-    align-self: center;
+  .content {
   }
 
-  .main-picture img {
-    height: 70vh;
-    width: auto;
+  .image-wrapper {
+    height: 300px;
+
+    img {
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   .thumbnails {
+    position: absolute;
+    bottom: 20px;
     display: flex;
+    padding-left: 32px;
+    padding-right: 32px;
     gap: 3px;
   }
 
@@ -60,12 +69,12 @@ export default function TipsyGalleryPage() {
   const selectedPicture = allPictures.find((picture) => picture.file === displayPicture);
 
   return (
-    <Layout>
+    <StyledTipsyGalleryPage>
       <SEO pageTitle="Donate" />
       <TopLinks />
-      <StyledTipsyGalleryPage>
-        <div className="main-picture">
-          <Image alt={selectedPicture.alt} src={selectedPicture.picReference} />
+      <div className="content">
+        <div className="image-wrapper">
+          <Image alt={selectedPicture.alt} className="main-image" src={selectedPicture.picReference} />
         </div>
         <div className="thumbnails">
           {allPictures.map(({picReference, alt, file}) => {
@@ -83,7 +92,7 @@ export default function TipsyGalleryPage() {
             );
           })}
         </div>
-      </StyledTipsyGalleryPage>
-    </Layout>
+      </div>
+    </StyledTipsyGalleryPage>
   );
 }

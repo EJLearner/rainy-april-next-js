@@ -7,6 +7,7 @@ const routePaths = {
   TMITW_PRE_PRODUCTION_ARTIFACTS: '/tmitw/pre-production-artifacts',
   SYNOPSIS: '/synopsis',
   TIPSY: '/tipsy',
+  TIPSY_GALLERY: '/tipsy/gallery',
 
   OLD_TMITW_FILMMAKERS: '/tmitw-filmmakers',
   OLD_TMITW_PRE_PRODUCTION_ARTIFACTS: '/tmitw-pre-production-artifacts'
