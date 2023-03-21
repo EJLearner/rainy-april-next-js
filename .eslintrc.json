@@ -62,5 +62,8 @@
     "react/self-closing-comp": "error",
     "react/void-dom-elements-no-children": "error",
     "semi": "error"
+  },
+  "env": {
+    "es6": true
   }
 }
