@@ -7,6 +7,7 @@ import PrevNextPageButton from '../components/PrevNextPageButton';
 import SEO from '../components/SEO';
 import TopLinks, {pageTypes} from '../components/TopLinks';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
+import crewFilmTalkPicture from '../images/crew-film-talk.png';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
 import routePaths from '../utils/routePaths';
 
@@ -165,12 +166,13 @@ const ManInWindowPage = () => {
                 subtitle="Crew Biographies"
                 title="Filmmakers"
               />
-              {/* <FilmMainPageBottomLink
-              imageSource={testPicture}
-              linkTo={routePaths.FILMMAKERS}
-              subtitle="2/15 Pre Production Meeting"
-              title="Stay in the Loop"
-            /> */}
+              <FilmMainPageBottomLink
+                external
+                imageSource={crewFilmTalkPicture}
+                linkTo="https://youtu.be/fUuw_YPiwbU"
+                subtitle="3/19 Pre Production Meeting"
+                title="Stay in the Loop"
+              />
               <FilmMainPageBottomLink
                 imageSource={proposalAndMarketingPicture}
                 linkTo={routePaths.TMITW_PRE_PRODUCTION_ARTIFACTS}
