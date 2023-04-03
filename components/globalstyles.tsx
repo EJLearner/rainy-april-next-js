@@ -96,8 +96,10 @@ html {
   height: 100%;
 }
 
-// show underline on hover, not all the time
 a {
+  // keep links the same color as the surroundings by default
+  color: inherit;
+  // show underline on hover, not all the time
   text-decoration: none;
 }
 

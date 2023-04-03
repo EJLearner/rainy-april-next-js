@@ -45,7 +45,6 @@ const StyledFilmMainPageBottomLink = styled.div`
 function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external, isFile}) {
   const contents = (
     <>
-      {/* TODO use query to load these image, use TopLinks as guide */}
       <Image alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} width={600} />
       <div className="title">{title}</div>
       <div className="subtitle">{subtitle}</div>

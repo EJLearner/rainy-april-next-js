@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -8,10 +9,21 @@ import SEO from '../components/SEO';
 import TopLinks, {pageTypes} from '../components/TopLinks';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import crewFilmTalkPicture from '../images/crew-film-talk.png';
+import msacLogo from '../images/msac-logo.png';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
 import routePaths from '../utils/routePaths';
 
 const tmitwBackgroundPublicSource = '/tmitw-background.jpg';
+
+const DONORS_LIST = [
+  'Delores Allen',
+  'Kim & James Brown',
+  'Lester Diamond',
+  'Kesha Galloway',
+  'Stacey Johnson',
+  'Dan Newberger',
+  'Jerome Richards'
+];
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);
@@ -105,12 +117,47 @@ const StyledManInPageWindow = styled.div`
     justify-content: space-between;
   }
 
+  .thank-yous {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    padding: 1em var(--gutter-width);
+
+    li {
+      text-align: center;
+      list-style-type: none;
+    }
+  }
+
+  .msac-thanks {
+    margin-top: 32px;
+    align-self: center;
+    width: 80%;
+    text-align: center;
+  }
+
+  .msac-link {
+    background-color: white;
+    display: block;
+    align-self: center;
+    padding-right: 8px;
+    margin-top: 10px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   @media screen and (max-width: 800px) {
     h1 {
       font-weight: bold;
     }
 
     .blurb {
+      width: 100%;
+    }
+
+    .msac-thanks {
       width: 100%;
     }
 
@@ -180,6 +227,23 @@ const ManInWindowPage = () => {
                 title="Learn More"
               />
             </div>
+          </div>
+          <div className="thank-yous">
+            <h2>The filmmakers wish to thank</h2>
+            {DONORS_LIST.map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+            <p className="msac-thanks">
+              This film project is supported in part by the Maryland State Arts Council (MSAC). To discover more about
+              the MSAC and how they impact Maryland, visit{' '}
+              <a href="https://www.msac.org/" rel="noreferrer" target="_blank">
+                msac.org
+              </a>
+              .
+            </p>
+            <a className="msac-link" href="https://www.msac.org/" rel="noreferrer" target="_blank">
+              <Image alt="MSAC Logo" src={msacLogo} width={300} />
+            </a>
           </div>
         </StyledManInPageWindow>
       </Layout>
