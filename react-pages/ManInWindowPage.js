@@ -15,15 +15,23 @@ import routePaths from '../utils/routePaths';
 
 const tmitwBackgroundPublicSource = '/tmitw-background.jpg';
 
-const DONORS_LIST = [
-  'Delores Allen',
-  'Kim & James Brown',
-  'Lester Diamond',
-  'Kesha Galloway',
-  'Stacey Johnson',
-  'Dan Newberger',
-  'Jerome Richards'
-];
+const SORTED_DONORS_LIST = [
+  {first: 'Delores', last: 'Allen'},
+  {first: 'Kim & James', last: 'Brown'},
+  {first: 'Lester', last: 'Diamond'},
+  {first: 'Iris', last: 'Ford'},
+  {first: 'Kesha', last: 'Galloway'},
+  {first: 'Stacey', last: 'Johnson'},
+  {first: 'Dan', last: 'Newberger'},
+  {first: 'Jerome', last: 'Richards'},
+  {first: 'Jasmen', last: 'Rice'}
+]
+  .sort((a, b) => {
+    const lastNameSortValue = a.last.localeCompare(b.last);
+
+    return lastNameSortValue || a.first.localeCompare(b.first);
+  })
+  .map((name) => `${name.first} ${name.last}`);
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);
@@ -121,7 +129,7 @@ const StyledManInPageWindow = styled.div`
     background-color: var(--black);
     display: flex;
     flex-direction: column;
-    padding: 1em var(--gutter-width);
+    padding: 2em var(--gutter-width);
 
     li {
       text-align: center;
@@ -230,7 +238,7 @@ const ManInWindowPage = () => {
           </div>
           <div className="thank-yous">
             <h2>The filmmakers wish to thank</h2>
-            {DONORS_LIST.map((name) => (
+            {SORTED_DONORS_LIST.map((name) => (
               <li key={name}>{name}</li>
             ))}
             <p className="msac-thanks">
@@ -242,7 +250,7 @@ const ManInWindowPage = () => {
               .
             </p>
             <a className="msac-link" href="https://www.msac.org/" rel="noreferrer" target="_blank">
-              <Image alt="MSAC Logo" src={msacLogo} width={300} />
+              <Image alt="MSAC Logo" src={msacLogo} width={180} />
             </a>
           </div>
         </StyledManInPageWindow>

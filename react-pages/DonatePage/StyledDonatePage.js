@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-const inputRightPaddingPx = 8;
-const errorColor = '#ff0033';
-
 const StyledDonatePage = styled.div`
   --gray-background: rgb(222, 222, 222);
   position: relative;
@@ -39,6 +36,8 @@ const StyledDonatePage = styled.div`
     font-size: 16px;
 
     .logo-and-text {
+      display: flex;
+      flex-direction: column;
       padding: 16px 32px;
     }
 
@@ -53,88 +52,14 @@ const StyledDonatePage = styled.div`
     }
   }
 
-  .donation-options-box {
-    align-self: flex-start;
+  a {
     background-color: var(--accent-yellow);
-    margin-top: 64px;
-    width: 200px;
-    padding: 16px;
-
-    h2 {
-      text-align: center;
-      font-size: 16px;
-    }
-  }
-
-  .inputs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-      'presetValueButton1 presetValueButton2 presetValueButton3'
-      'presetValueButton4 presetValueButton5 presetValueButton6'
-      'input input input'
-      'donate-button donate-button donate-button';
-    gap: 12px;
-  }
-
-  .preset-buttons {
     color: var(--black);
-    background-color: var(--white);
-  }
-
-  .dollar-symbol-and-input {
-    padding: 0;
-    position: relative;
-    grid-area: input;
-
-    span {
-      display: block;
-      position: absolute;
-      left: 8px;
-      top: 6px;
-    }
-
-    input {
-      border: none;
-      padding-right: ${inputRightPaddingPx}px;
-      width: 100%;
-      height: 100%;
-      text-align: right;
-      width: calc(100% - (${inputRightPaddingPx}px + 1px));
-    }
-  }
-
-  .error-space {
-    color: ${errorColor};
-    min-height: 20px;
-    font-size: 12px;
+    margin-top: 1em;
+    padding: 4px 8px;
     text-align: center;
-    transform: translateY(-3px);
-  }
-
-  .space {
-    grid-area: space;
-  }
-
-  input:invalid {
-    outline: ${errorColor} solid 3px;
-  }
-
-  .donate-button-form {
-    margin-top: 10px;
-    grid-area: donate-button;
-  }
-
-  .donate-button {
-    background-color: var(--blue);
-    color: var(--white);
-    width: 100%;
-    height: 100%;
-  }
-
-  button:hover {
-    filter: brightness(0.8);
+    display: inline-block;
+    align-self: center;
   }
 
   @media screen and (max-width: 800px) {
@@ -146,10 +71,6 @@ const StyledDonatePage = styled.div`
 
     .image-thanks-wrapper {
       width: 100%;
-    }
-
-    .donation-options-box {
-      align-self: center;
     }
   }
 `;
