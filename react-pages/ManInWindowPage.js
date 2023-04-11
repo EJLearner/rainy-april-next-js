@@ -16,22 +16,28 @@ import routePaths from '../utils/routePaths';
 const tmitwBackgroundPublicSource = '/tmitw-background.jpg';
 
 const SORTED_DONORS_LIST = [
-  {first: 'Delores', last: 'Allen'},
-  {first: 'Kim & James', last: 'Brown'},
-  {first: 'Lester', last: 'Diamond'},
-  {first: 'Iris', last: 'Ford'},
-  {first: 'Kesha', last: 'Galloway'},
-  {first: 'Stacey', last: 'Johnson'},
-  {first: 'Dan', last: 'Newberger'},
-  {first: 'Jerome', last: 'Richards'},
-  {first: 'Jasmen', last: 'Rice'}
+  ['Allen', 'Delores'],
+  ['Brown', 'Kim & James'],
+  ['Diamond', 'Lester'],
+  ['Ford', 'Iris'],
+  ['Galloway', 'Kesha'],
+  ['Johnson', 'Stacey'],
+  ['Newberger', 'Dan'],
+  ['Richards', 'Jerome'],
+  ['Rice', 'Jasmen'],
+  ['Reed', 'Greg & Vonda'],
+  ['Clash', 'Janice'],
+  ['Rather', 'Elaine']
 ]
   .sort((a, b) => {
-    const lastNameSortValue = a.last.localeCompare(b.last);
+    const [lastA, firstA] = a;
+    const [lastB, firstB] = b;
 
-    return lastNameSortValue || a.first.localeCompare(b.first);
+    const lastNameSortValue = lastA.localeCompare(lastB);
+
+    return lastNameSortValue || firstA.localeCompare(firstB);
   })
-  .map((name) => `${name.first} ${name.last}`);
+  .map(([last, first]) => `${first} ${last}`);
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);
