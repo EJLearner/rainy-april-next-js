@@ -11,33 +11,10 @@ import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import crewFilmTalkPicture from '../images/crew-film-talk.png';
 import msacLogo from '../images/msac-logo.png';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
+import donorsStore from '../stores/donorsStore';
 import routePaths from '../utils/routePaths';
 
 const tmitwBackgroundPublicSource = '/tmitw-background.jpg';
-
-const SORTED_DONORS_LIST = [
-  ['Allen', 'Delores'],
-  ['Brown', 'Kim & James'],
-  ['Diamond', 'Lester'],
-  ['Ford', 'Iris'],
-  ['Galloway', 'Kesha'],
-  ['Johnson', 'Stacey'],
-  ['Newberger', 'Dan'],
-  ['Richards', 'Jerome'],
-  ['Rice', 'Jasmen'],
-  ['Reed', 'Greg & Vonda'],
-  ['Clash', 'Janice'],
-  ['Rather', 'Elaine']
-]
-  .sort((a, b) => {
-    const [lastA, firstA] = a;
-    const [lastB, firstB] = b;
-
-    const lastNameSortValue = lastA.localeCompare(lastB);
-
-    return lastNameSortValue || firstA.localeCompare(firstB);
-  })
-  .map(([last, first]) => `${first} ${last}`);
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);
@@ -244,7 +221,7 @@ const ManInWindowPage = () => {
           </div>
           <div className="thank-yous">
             <h2>The filmmakers wish to thank</h2>
-            {SORTED_DONORS_LIST.map((name) => (
+            {donorsStore.donors.map((name) => (
               <li key={name}>{name}</li>
             ))}
             <p className="msac-thanks">
