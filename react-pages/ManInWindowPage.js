@@ -104,7 +104,12 @@ const StyledManInPageWindow = styled.div`
 
   .bottom-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    // should be no more than three columns
+    --max-columns: 3;
+    --links-grid-width: (100% - (var(--gutter-width) * 2));
+    --min-column-width: var(--links-grid-width) / var(--max-columns);
+    grid-template-columns: repeat(auto-fit, minmax(max(300px, var(--min-column-width)), 1fr));
     grid-auto-rows: min-content;
     gap: 32px;
   }
@@ -200,6 +205,12 @@ const ManInWindowPage = () => {
             </div>
             <div className="bottom-links">
               <FilmMainPageBottomLink
+                imageSource={auditionsPicture}
+                linkTo="https://vimeo.com/824595454/5dd487d1b2"
+                subtitle="5/6 Auditions"
+                title="Stay in the Loop"
+              />
+              <FilmMainPageBottomLink
                 imageSource={crewBiosPicture}
                 linkTo={routePaths.TMITW_FILMMAKERS}
                 subtitle="Crew Biographies"
@@ -217,12 +228,6 @@ const ManInWindowPage = () => {
                 linkTo={routePaths.TMITW_PRE_PRODUCTION_ARTIFACTS}
                 subtitle="Pre-Production Artifacts"
                 title="Learn More"
-              />
-              <FilmMainPageBottomLink
-                imageSource={auditionsPicture}
-                linkTo="https://vimeo.com/824595454/5dd487d1b2"
-                subtitle="5/6 Auditions"
-                title="Stay in the Loop"
               />
             </div>
           </div>

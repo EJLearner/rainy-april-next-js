@@ -98,7 +98,12 @@ const StyledTipsyPage = styled.div`
 
   .bottom-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    // should be no more than three columns
+    --max-columns: 3;
+    --links-grid-width: (100% - (var(--gutter-width) * 2));
+    --min-column-width: var(--links-grid-width) / var(--max-columns);
+    grid-template-columns: repeat(auto-fit, minmax(max(300px, var(--min-column-width)), 1fr));
     grid-auto-rows: min-content;
     gap: 32px;
   }
