@@ -97,10 +97,10 @@ const StyledTipsyPage = styled.div`
   }
 
   .bottom-links {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: min-content;
     gap: 32px;
-    justify-content: space-between;
   }
 
   @media screen and (max-width: 800px) {

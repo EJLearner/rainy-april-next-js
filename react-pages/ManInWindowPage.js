@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import PrevNextPageButton from '../components/PrevNextPageButton';
 import SEO from '../components/SEO';
 import TopLinks, {pageTypes} from '../components/TopLinks';
+import auditionsPicture from '../images/auditions.png';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import crewFilmTalkPicture from '../images/crew-film-talk.png';
 import msacLogo from '../images/msac-logo.png';
@@ -102,10 +103,10 @@ const StyledManInPageWindow = styled.div`
   }
 
   .bottom-links {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: min-content;
     gap: 32px;
-    justify-content: space-between;
   }
 
   .thank-yous {
@@ -216,6 +217,12 @@ const ManInWindowPage = () => {
                 linkTo={routePaths.TMITW_PRE_PRODUCTION_ARTIFACTS}
                 subtitle="Pre-Production Artifacts"
                 title="Learn More"
+              />
+              <FilmMainPageBottomLink
+                imageSource={auditionsPicture}
+                linkTo="https://vimeo.com/824595454/5dd487d1b2"
+                subtitle="5/6 Auditions"
+                title="Stay in the Loop"
               />
             </div>
           </div>
