@@ -1,6 +1,9 @@
 const donorsStore = {
   get donors() {
     return [
+      ['Glyndon Dry Cleanders'],
+      ['Pierce', 'Lori and Will'],
+      ['Anderson', 'Avis and Greg'],
       ['Allen', 'Delores'],
       ['Brown', 'Kim & James'],
       ['Clash', 'Janice'],
@@ -23,7 +26,7 @@ const donorsStore = {
 
         return lastNameSortValue || firstA.localeCompare(firstB);
       })
-      .map(([last, first]) => `${first} ${last}`);
+      .map(([last = '', first = '']) => `${first} ${last}`);
   }
 };
 
