@@ -1,6 +1,8 @@
 const donorsStore = {
   get donors() {
     return [
+      ['Allen', 'James'],
+      ['Tilghman', 'Emily'],
       ['Glyndon Dry Cleanders'],
       ['Pierce', 'Lori and Will'],
       ['Anderson', 'Avis and Greg'],
