@@ -1,7 +1,7 @@
 const donorsStore = {
   get donors() {
     return [
-      ['Allen', 'James'],
+      ['Allen Jr', 'James'],
       ['Pasienza', 'Emily'],
       ['Glyndon Dry Cleanders'],
       ['Pierce', 'Lori and Will'],
@@ -18,7 +18,8 @@ const donorsStore = {
       ['Reed', 'Greg & Vonda'],
       ['Rice', 'Jasmen'],
       ['Richards', 'Jerome'],
-      ['Thomas', 'Paula']
+      ['Thomas', 'Paula'],
+      ['Gaunt', 'Terry']
     ]
       .sort((a, b) => {
         const [lastA, firstA] = a;
