@@ -3,7 +3,7 @@ const donorsStore = {
     return [
       ['Allen Jr', 'James'],
       ['Pasienza', 'Emily'],
-      ['Glyndon Dry Cleanders'],
+      ['Glyndon Dry Cleaners'],
       ['Pierce', 'Lori and Will'],
       ['Anderson', 'Avis and Greg'],
       ['Allen', 'Delores'],
