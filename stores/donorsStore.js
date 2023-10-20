@@ -31,9 +31,7 @@ const donorsStore = {
         const [lastA, firstA] = a;
         const [lastB, firstB] = b;
 
-        const lastNameSortValue = lastA.localeCompare(lastB);
-
-        return lastNameSortValue || firstA.localeCompare(firstB);
+        return lastA.localeCompare(lastB) || firstA.localeCompare(firstB);
       })
       .map(([last = '', first = '']) => `${first} ${last}`);
   }
