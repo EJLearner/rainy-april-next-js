@@ -11,6 +11,7 @@ import auditionsPicture from '../images/auditions.png';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import crewFilmTalkPicture from '../images/crew-film-talk.png';
 import msacLogo from '../images/msac-logo.png';
+import stayInTheLoopPicture from '../images/tmitw-post-production-meeting-thumbnail.png';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
 import donorsStore from '../stores/donorsStore';
 import routePaths from '../utils/routePaths';
@@ -205,6 +206,7 @@ const ManInWindowPage = () => {
             </div>
             <div className="bottom-links">
               <FilmMainPageBottomLink
+                external
                 imageSource={auditionsPicture}
                 linkTo="https://vimeo.com/824595454/5dd487d1b2"
                 subtitle="5/6 Auditions"
@@ -224,10 +226,18 @@ const ManInWindowPage = () => {
                 title="Stay in the Loop"
               />
               <FilmMainPageBottomLink
+                external
                 imageSource={proposalAndMarketingPicture}
                 linkTo={routePaths.TMITW_PRE_PRODUCTION_ARTIFACTS}
                 subtitle="Pre-Production Artifacts"
                 title="Learn More"
+              />
+              <FilmMainPageBottomLink
+                external
+                imageSource={stayInTheLoopPicture}
+                linkTo="https://vimeo.com/884576556/4fbd15830c"
+                subtitle="Post Production Meeting With Editor, VFX Editor, And Sound Designer"
+                title="Stay in the Loop"
               />
             </div>
           </div>
