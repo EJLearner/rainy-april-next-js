@@ -207,6 +207,13 @@ const ManInWindowPage = () => {
             <div className="bottom-links">
               <FilmMainPageBottomLink
                 external
+                imageSource={stayInTheLoopPicture}
+                linkTo="https://vimeo.com/884576556/4fbd15830c"
+                subtitle="Post Production Meeting With Editor, VFX Editor, And Sound Designer"
+                title="Stay in the Loop"
+              />
+              <FilmMainPageBottomLink
+                external
                 imageSource={auditionsPicture}
                 linkTo="https://vimeo.com/824595454/5dd487d1b2"
                 subtitle="5/6 Auditions"
@@ -231,13 +238,6 @@ const ManInWindowPage = () => {
                 linkTo={routePaths.TMITW_PRE_PRODUCTION_ARTIFACTS}
                 subtitle="Pre-Production Artifacts"
                 title="Learn More"
-              />
-              <FilmMainPageBottomLink
-                external
-                imageSource={stayInTheLoopPicture}
-                linkTo="https://vimeo.com/884576556/4fbd15830c"
-                subtitle="Post Production Meeting With Editor, VFX Editor, And Sound Designer"
-                title="Stay in the Loop"
               />
             </div>
           </div>
