@@ -187,11 +187,11 @@ const ManInWindowPage = () => {
                   </p>
                   <a
                     className="trailer-link"
-                    href="https://www.youtube.com/watch?v=IfCTqClezmM"
+                    href="https://www.youtube.com/watch?v=5kPMryUaLmY"
                     rel="noreferrer"
                     target="_blank"
                   >
-                    Watch Teaser Here
+                    Watch Trailer
                   </a>
                 </div>
               </div>
