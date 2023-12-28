@@ -25,15 +25,16 @@ const donorsStore = {
       ['Williams', 'Nadia'],
       ['Ajayi', 'Juwon'],
       ['Ajayi', 'Adejare'],
-      ['Barriffe', 'Alisande']
+      ['Barriffe', 'Alisande'],
+      ['Reeves', 'Shondrea'],
+      ['Wheatley', 'La’Dona'],
+      ['Yu', 'Nina']
     ]
       .sort((a, b) => {
         const [lastA, firstA] = a;
         const [lastB, firstB] = b;
 
-        const lastNameSortValue = lastA.localeCompare(lastB);
-
-        return lastNameSortValue || firstA.localeCompare(firstB);
+        return lastA.localeCompare(lastB) || firstA.localeCompare(firstB);
       })
       .map(([last = '', first = '']) => `${first} ${last}`);
   }
