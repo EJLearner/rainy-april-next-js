@@ -177,10 +177,7 @@ const ManInWindowPage = () => {
               <div className="content-and-arrow-wrapper">
                 <PrevNextPageButton path={routePaths.TIPSY} title="Tipsy Movie" type="Next" />
                 <div className="top-content">
-                  <h1>
-                    <div className="subheading">Coming Fall 2023</div>
-                    The Man In The Window
-                  </h1>
+                  <h1>The Man In The Window</h1>
                   <p className="blurb">
                     When a Black man is falsely accused by his White neighbors of a crime he did not commit, he receives
                     help from an unlikely ally. But should he bet his life on this new ally?
