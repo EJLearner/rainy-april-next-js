@@ -10,6 +10,8 @@ import TopLinks, {pageTypes} from '../components/TopLinks';
 import auditionsPicture from '../images/auditions.png';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import crewFilmTalkPicture from '../images/crew-film-talk.png';
+import tmitwBaltimoreLaurel from '../images/laurel-tmitw-bibff2024.png';
+import tmitwTwinCitiesLaurel from '../images/laurel-tmitw-tcbff2024.png';
 import msacLogo from '../images/msac-logo.png';
 import stayInTheLoopPicture from '../images/tmitw-post-production-meeting-thumbnail.png';
 import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifacts-thumbnail.png';
@@ -23,7 +25,7 @@ const StyledManInPageWindow = styled.div`
   letter-spacing: 1.5px;
 
   .main-page-and-background {
-    background-color: black;
+    background-color: var(--black);
     min-height: 100vh;
     height: 100%;
     background-repeat: no-repeat;
@@ -81,6 +83,18 @@ const StyledManInPageWindow = styled.div`
 
   .trailer-link:hover {
     text-decoration: underline;
+  }
+
+  .laurels {
+    /* background-color: white; */
+    /* background-color: var(--black); */
+    display: flex;
+    justify-content: space-around;
+
+    img {
+      display: inline-block;
+      padding: 1em;
+    }
   }
 
   .join-action {
@@ -174,6 +188,15 @@ const ManInWindowPage = () => {
           <div className="main-page-and-background">
             <div className="gradient-mask">
               <TopLinks isHome pageType={pageTypes.DARK} />
+              <div className="laurels">
+                <Image
+                  alt="Baltimore International Black Film Festival Laurel"
+                  height={150}
+                  src={tmitwBaltimoreLaurel}
+                />
+                <Image alt="Twin Cities Black Film Festival Laurel" height={150} src={tmitwTwinCitiesLaurel} />
+              </div>
+
               <div className="content-and-arrow-wrapper">
                 <PrevNextPageButton path={routePaths.TIPSY} title="Tipsy Movie" type="Next" />
                 <div className="top-content">
