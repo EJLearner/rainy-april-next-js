@@ -1,4 +1,4 @@
-import  {createGlobalStyle} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -105,6 +105,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+p {
+  margin-bottom: 1em;
 }
 `;
 
