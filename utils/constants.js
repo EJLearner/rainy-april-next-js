@@ -1,7 +1,7 @@
 import routePaths from './routePaths';
 
 const misc = {
-  PRESENTATIONAL_IMAGE: ''
+  PRESENTATIONAL_IMAGE: '',
 };
 
 export {routePaths, misc};

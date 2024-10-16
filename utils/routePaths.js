@@ -6,7 +6,7 @@ const routePaths = {
   MAIN: '/',
   TMITW_PRE_PRODUCTION_ARTIFACTS: '/tmitw-pre-production-artifacts',
   SYNOPSIS: '/synopsis',
-  TIPSY: '/tipsy'
+  TIPSY: '/tipsy',
 };
 
 export default routePaths;

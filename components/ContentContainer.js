@@ -13,5 +13,5 @@ function ContentContainer({children}) {
 export default ContentContainer;
 
 ContentContainer.propTypes = {
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
 };

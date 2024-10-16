@@ -16,5 +16,5 @@ function SEO({pageTitle}) {
 export default SEO;
 
 SEO.propTypes = {
-  pageTitle: PropTypes.string
+  pageTitle: PropTypes.string,
 };

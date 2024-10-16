@@ -32,7 +32,11 @@ const StyledManInPageWindow = styled.div`
   }
 
   .gradient-mask {
-    background: linear-gradient(rgba(0, 0, 0, 255) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+      rgba(0, 0, 0, 255) 0%,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 100%
+    );
     min-height: 100vh;
     height: 100%;
     display: flex;
@@ -110,7 +114,10 @@ const StyledManInPageWindow = styled.div`
     --max-columns: 3;
     --links-grid-width: (100% - (var(--gutter-width) * 2));
     --min-column-width: var(--links-grid-width) / var(--max-columns);
-    grid-template-columns: repeat(auto-fit, minmax(max(300px, var(--min-column-width)), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(300px, var(--min-column-width)), 1fr)
+    );
     grid-auto-rows: min-content;
     gap: 32px;
   }
@@ -175,12 +182,17 @@ const ManInWindowPage = () => {
             <div className="gradient-mask">
               <TopLinks isHome pageType={pageTypes.DARK} />
               <div className="content-and-arrow-wrapper">
-                <PrevNextPageButton path={routePaths.TIPSY} title="Tipsy Movie" type="Next" />
+                <PrevNextPageButton
+                  path={routePaths.TIPSY}
+                  title="Tipsy Movie"
+                  type="Next"
+                />
                 <div className="top-content">
                   <h1>The Man In The Window</h1>
                   <p className="blurb">
-                    When a Black man is falsely accused by his White neighbors of a crime he did not commit, he receives
-                    help from an unlikely ally. But should he bet his life on this new ally?
+                    When a Black man is falsely accused by his White neighbors
+                    of a crime he did not commit, he receives help from an
+                    unlikely ally. But should he bet his life on this new ally?
                   </p>
                   <a
                     className="trailer-link"
@@ -198,7 +210,8 @@ const ManInWindowPage = () => {
             <div className="more-info-headers">
               <h2>Join The Action</h2>
               <h3>
-                Follow the Production of <span className="movie-title">The Man in the Window</span>
+                Follow the Production of{' '}
+                <span className="movie-title">The Man in the Window</span>
               </h3>
             </div>
             <div className="bottom-links">
@@ -244,14 +257,20 @@ const ManInWindowPage = () => {
               <li key={name}>{name}</li>
             ))}
             <p className="msac-thanks">
-              This film project is supported in part by the Maryland State Arts Council (MSAC). To discover more about
-              the MSAC and how they impact Maryland, visit{' '}
+              This film project is supported in part by the Maryland State Arts
+              Council (MSAC). To discover more about the MSAC and how they
+              impact Maryland, visit{' '}
               <a href="https://www.msac.org/" rel="noreferrer" target="_blank">
                 msac.org
               </a>
               .
             </p>
-            <a className="msac-link" href="https://www.msac.org/" rel="noreferrer" target="_blank">
+            <a
+              className="msac-link"
+              href="https://www.msac.org/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <Image alt="MSAC Logo" src={msacLogo} width={180} />
             </a>
           </div>

@@ -12,11 +12,12 @@ import routePaths from '../utils/routePaths';
 
 const pageTypes = {
   DARK: 'dark',
-  LIGHT: 'light'
+  LIGHT: 'light',
 };
 
 const StyledTopLinks = styled.div`
-  font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic,
+    AppleGothic, sans-serif;
   text-transform: uppercase;
   justify-content: space-between;
   display: flex;
@@ -102,17 +103,25 @@ function TopLinks(props) {
   const linksInfo = [
     {path: routePaths.ABOUT, label: 'About'},
     {path: routePaths.CONTACT, label: 'Contact'},
-    {path: routePaths.DONATE, label: 'Donate', className: 'yellow-button'}
+    {path: routePaths.DONATE, label: 'Donate', className: 'yellow-button'},
   ];
 
-  const className = ['top-links', isHome && 'home-top-links', pageType === pageTypes.DARK ? 'dark' : 'light']
+  const className = [
+    'top-links',
+    isHome && 'home-top-links',
+    pageType === pageTypes.DARK ? 'dark' : 'light',
+  ]
     .filter((name) => name)
     .join(' ');
 
   return (
     <StyledTopLinks className={className}>
       <Link className="site-logo-link" href={routePaths.MAIN}>
-        <Image alt="Site Logo" className="site-logo" src={pageType === pageTypes.DARK ? lightImage : darkImage} />
+        <Image
+          alt="Site Logo"
+          className="site-logo"
+          src={pageType === pageTypes.DARK ? lightImage : darkImage}
+        />
       </Link>
       <div className="links-array-wrapper">{renderLinksArray(linksInfo)}</div>
     </StyledTopLinks>
@@ -121,11 +130,11 @@ function TopLinks(props) {
 
 TopLinks.propTypes = {
   isHome: propTypes.bool,
-  pageType: propTypes.string
+  pageType: propTypes.string,
 };
 
 TopLinks.defaultProps = {
-  isHome: false
+  isHome: false,
 };
 
 export {pageTypes};

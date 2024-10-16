@@ -30,7 +30,11 @@ function PrevNextPageButton({path, title, type}) {
   const rightOrLeft = type === 'previous' ? 'left' : 'right';
 
   return (
-    <StyledPrevNextPageButton className={rightOrLeft} onClick={() => router.push(path)} title={title}>
+    <StyledPrevNextPageButton
+      className={rightOrLeft}
+      onClick={() => router.push(path)}
+      title={title}
+    >
       <i className={`bi bi-chevron-${rightOrLeft}`} />
     </StyledPrevNextPageButton>
   );
@@ -39,7 +43,7 @@ function PrevNextPageButton({path, title, type}) {
 PrevNextPageButton.propTypes = {
   path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
 };
 
 export default PrevNextPageButton;

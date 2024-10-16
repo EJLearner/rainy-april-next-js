@@ -25,7 +25,11 @@ const StyledTipsyPage = styled.div`
   }
 
   .gradient-mask {
-    background: linear-gradient(rgba(0, 0, 0, 255) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+      rgba(0, 0, 0, 255) 0%,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 100%
+    );
     min-height: 100vh;
     height: 100%;
     display: flex;
@@ -103,7 +107,10 @@ const StyledTipsyPage = styled.div`
     --max-columns: 3;
     --links-grid-width: (100% - (var(--gutter-width) * 2));
     --min-column-width: var(--links-grid-width) / var(--max-columns);
-    grid-template-columns: repeat(auto-fit, minmax(max(300px, var(--min-column-width)), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(300px, var(--min-column-width)), 1fr)
+    );
     grid-auto-rows: min-content;
     gap: 32px;
   }
@@ -128,15 +135,22 @@ const TipsyPage = () => {
           <div className="gradient-mask">
             <TopLinks isHome pageType={pageTypes.DARK} />
             <div className="content-and-arrow-wrapper">
-              <PrevNextPageButton path={routePaths.MAIN} title="The Man In The Window Movie" type="previous" />
+              <PrevNextPageButton
+                path={routePaths.MAIN}
+                title="The Man In The Window Movie"
+                type="previous"
+              />
               <div className="top-content">
                 <h1>Tipsy</h1>
                 <p className="blurb">
-                  High school teacher Shawna is young, carefree, and fun. She likes to go out and party on the weekends
-                  with her friends and hookup with men in a drunken haze of one-night stands. When she gets a
-                  threatening note to not say no to a former lover intent on having her to himself, she dismisses it as
-                  a prank by one of her students. But soon the threats intensify and strike closer to home. The clock is
-                  ticking for Shawna. Will she learn her stalker’s identity before it’s too late?
+                  High school teacher Shawna is young, carefree, and fun. She
+                  likes to go out and party on the weekends with her friends and
+                  hookup with men in a drunken haze of one-night stands. When
+                  she gets a threatening note to not say no to a former lover
+                  intent on having her to himself, she dismisses it as a prank
+                  by one of her students. But soon the threats intensify and
+                  strike closer to home. The clock is ticking for Shawna. Will
+                  she learn her stalker’s identity before it’s too late?
                 </p>
                 <a
                   className="trailer-link"
@@ -154,7 +168,8 @@ const TipsyPage = () => {
           <div className="more-info-headers">
             <h2>Join The Action</h2>
             <h3>
-              Follow the Production of <span className="movie-title">Tipsy</span>
+              Follow the Production of{' '}
+              <span className="movie-title">Tipsy</span>
             </h3>
           </div>
           <div className="bottom-links">

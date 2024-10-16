@@ -77,7 +77,7 @@ function Filmmaker(props) {
 Filmmaker.propTypes = {
   children: propTypes.node.isRequired,
   imageRender: propTypes.node.isRequired,
-  name: propTypes.string.isRequired
+  name: propTypes.string.isRequired,
 };
 
 export default Filmmaker;

@@ -47,15 +47,27 @@ const PreProductionArtifactsPage = () => {
           <h1>Pre-Production Artifacts</h1>
           <div className="wrapper">
             <a className="thumbnail-and-title" href="/Marketing-Plan.pptx">
-              <Image alt="Marketing Plan Thumbnail" src={marketingPlanPicture} width={300} />
+              <Image
+                alt="Marketing Plan Thumbnail"
+                src={marketingPlanPicture}
+                width={300}
+              />
               Marketing Plan
             </a>
             <a className="thumbnail-and-title" href="/Social-Media-Plan.pptx">
-              <Image alt="Social Media Plan Thumbnail" src={socialMediaPlanPicture} width={300} />
+              <Image
+                alt="Social Media Plan Thumbnail"
+                src={socialMediaPlanPicture}
+                width={300}
+              />
               Social Media Plan
             </a>
             <a className="thumbnail-and-title" href="/Distribution-Plan.pptx">
-              <Image alt="Distribution Plan Thumbnail" src={distributionPlanPicture} width={300} />
+              <Image
+                alt="Distribution Plan Thumbnail"
+                src={distributionPlanPicture}
+                width={300}
+              />
               Distribution Plan
             </a>
           </div>

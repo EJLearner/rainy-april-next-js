@@ -28,7 +28,7 @@ const donorsStore = {
       ['Barriffe', 'Alisande'],
       ['Reeves', 'Shondrea'],
       ['Wheatley', 'La’Dona'],
-      ['Yu', 'Nina']
+      ['Yu', 'Nina'],
     ]
       .sort((a, b) => {
         const [lastA, firstA] = a;
@@ -37,7 +37,7 @@ const donorsStore = {
         return lastA.localeCompare(lastB) || firstA.localeCompare(firstB);
       })
       .map(([last = '', first = '']) => `${first} ${last}`);
-  }
+  },
 };
 
 export default donorsStore;

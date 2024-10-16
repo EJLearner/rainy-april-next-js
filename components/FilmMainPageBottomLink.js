@@ -42,7 +42,14 @@ const StyledFilmMainPageBottomLink = styled.div`
   }
 `;
 
-function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external, isFile}) {
+function FilmMainPageBottomLink({
+  imageSource,
+  subtitle,
+  title,
+  linkTo,
+  external,
+  isFile,
+}) {
   const contents = (
     <>
       <Image alt={misc.PRESENTATIONAL_IMAGE} src={imageSource} width={600} />
@@ -54,7 +61,12 @@ function FilmMainPageBottomLink({imageSource, subtitle, title, linkTo, external,
   if (isFile || external) {
     return (
       <StyledFilmMainPageBottomLink>
-        <a className="bottom-link" href={linkTo} rel="noreferrer" target="_blank">
+        <a
+          className="bottom-link"
+          href={linkTo}
+          rel="noreferrer"
+          target="_blank"
+        >
           {contents}
         </a>
       </StyledFilmMainPageBottomLink>
@@ -76,7 +88,7 @@ FilmMainPageBottomLink.propTypes = {
   isFile: propTypes.bool,
   linkTo: propTypes.string.isRequired,
   subtitle: propTypes.string.isRequired,
-  title: propTypes.string.isRequired
+  title: propTypes.string.isRequired,
 };
 
 export default FilmMainPageBottomLink;
