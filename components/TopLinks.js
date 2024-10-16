@@ -133,10 +133,6 @@ TopLinks.propTypes = {
   pageType: propTypes.string,
 };
 
-TopLinks.defaultProps = {
-  isHome: false,
-};
-
 export {pageTypes};
 
 export default TopLinks;

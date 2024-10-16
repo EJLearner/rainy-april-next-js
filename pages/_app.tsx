@@ -1,3 +1,4 @@
+import {GoogleTagManager} from '@next/third-parties/google';
 import type {AppProps} from 'next/app';
 import Head from 'next/head';
 import * as React from 'react';
@@ -22,6 +23,7 @@ export default function App({Component, pageProps}: AppProps) {
         <title>Rainy April Day Productions</title>
       </Head>
       <Component {...pageProps} />
+      <GoogleTagManager gtmId="G-VBGT1787ZN" />
     </ThemeProvider>
   );
 }
