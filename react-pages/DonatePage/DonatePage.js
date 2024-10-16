@@ -12,6 +12,7 @@ import supportPicture from '../../images/support-picture.png';
 import {misc} from '../../utils/constants';
 import {useScreenWidthCheck} from '../../utils/useScreenWidthCheck';
 
+/* TODO: whole [disabled] block can be removed when donate page is back */
 const StyledDonatePage = styled.div`
   --gray-background: rgb(222, 222, 222);
   position: relative;
@@ -65,6 +66,15 @@ const StyledDonatePage = styled.div`
   }
 
   a {
+    &[disabled] {
+      background-color: grey;
+
+      &:hover {
+        text-decoration: none;
+        cursor: default;
+      }
+    }
+
     background-color: var(--accent-yellow);
     color: var(--black);
     margin-top: 1em;
@@ -141,8 +151,17 @@ function DonatePage() {
                     underrepresented perspectives and experiences!
                   </p>
 
-                  <a href="https://www.gofundme.com/f/help-fund-film-production">
-                    Donate Now
+                  <a
+                    disabled
+                    href=""
+                    onClick={(event) => {
+                      // TODO: remove prevent default when donate page is back
+                      return event.preventDefault();
+                    }}
+                  >
+                    {/* Donate Now */}
+                    {/* TODO: update text when donate page is back */}
+                    Donation Available Soon
                   </a>
                 </div>
               </div>

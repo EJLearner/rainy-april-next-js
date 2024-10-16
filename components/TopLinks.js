@@ -15,6 +15,8 @@ const pageTypes = {
   LIGHT: 'light',
 };
 
+// TODO: undo justify-content comment out when donate page is back
+
 const StyledTopLinks = styled.div`
   font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic,
     AppleGothic, sans-serif;
@@ -27,7 +29,7 @@ const StyledTopLinks = styled.div`
 
   .links-array-wrapper {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 30vw;
     min-width: 260px;
     max-width: 360px;
@@ -103,7 +105,8 @@ function TopLinks(props) {
   const linksInfo = [
     {path: routePaths.ABOUT, label: 'About'},
     {path: routePaths.CONTACT, label: 'Contact'},
-    {path: routePaths.DONATE, label: 'Donate', className: 'yellow-button'},
+    // TODO: Add back when donate page is back up
+    // {path: routePaths.DONATE, label: 'Donate', className: 'yellow-button'},
   ];
 
   const className = [
