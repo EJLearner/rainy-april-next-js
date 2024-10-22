@@ -105,8 +105,7 @@ function TopLinks(props) {
   const linksInfo = [
     {path: routePaths.ABOUT, label: 'About'},
     {path: routePaths.CONTACT, label: 'Contact'},
-    // TODO: Add back when donate page is back up
-    // {path: routePaths.DONATE, label: 'Donate', className: 'yellow-button'},
+    {path: routePaths.DONATE, label: 'Donate', className: 'yellow-button'},
   ];
 
   const className = [
