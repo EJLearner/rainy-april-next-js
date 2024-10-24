@@ -94,6 +94,7 @@ html {
   color: #111;
   background-color: rgb(240, 240, 240);
   height: 100%;
+  scrollbar-gutter: stable;
 }
 
 a {
