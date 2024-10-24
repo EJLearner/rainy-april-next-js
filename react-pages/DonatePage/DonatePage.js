@@ -143,9 +143,8 @@ function DonatePage() {
 
                   <a
                     disabled
-                    href="https://www.paypal.com/ncp/payment/EQJF4UMEJVC3N"
-                    // To modify page, go to Dashboard, Pay links & Buttons in Quick Links, Back to Saved links and buttons
-                    // https://www.paypal.com/buttons/saved may work also
+                    // To modify page, https://www.paypal.com/donate/buttons/manage
+                    href="https://www.paypal.com/donate/?hosted_button_id=NVQUEZAV2SA6L"
                   >
                     Donate Now
                   </a>
