@@ -1,7 +1,6 @@
-// import {graphql, Link, useStaticQuery} from 'gatsby';
-// import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 import Image from 'next/image';
 import Link from 'next/link';
+import {usePathname} from 'next/navigation';
 import propTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
@@ -29,16 +28,20 @@ const StyledTopLinks = styled.div`
 
   .links-array-wrapper {
     display: flex;
-    /* justify-content: space-between; */
     width: 30vw;
     min-width: 260px;
     max-width: 360px;
   }
 
-  .links-array-wrapper a {
+  .links-array-wrapper a,
+  .links-array-wrapper .current-page {
     border-radius: 6px;
     padding: 0.3em 0.5em;
     text-decoration: none;
+  }
+
+  .current-page {
+    font-weight: bold;
   }
 
   &.dark {
@@ -81,19 +84,21 @@ const StyledTopLinks = styled.div`
     height: auto;
   }
 
-  .yellow-button a {
+  .yellow-button a,
+  .yellow-button .current-page {
     background-color: var(--accent-yellow);
     padding: 6px 20px;
   }
 `;
 
-function renderLinksArray(linksInfo) {
-  return linksInfo.map(({label, path, className}) => {
+function renderLinksArray(linksInfo, currentPath) {
+  return linksInfo.map(({label, path: linkPath, className}) => {
+    const currentPage = linkPath === currentPath;
+
     return (
-      <div className={['top-link-div', className].join(' ')} key={path}>
-        <Link data-label={label} href={path}>
-          {label}
-        </Link>
+      <div className={className} key={linkPath}>
+        {currentPage && <span className="current-page">{label}</span>}
+        {!currentPage && <Link href={linkPath}>{label}</Link>}
       </div>
     );
   });
@@ -101,6 +106,7 @@ function renderLinksArray(linksInfo) {
 
 function TopLinks(props) {
   const {isHome = false, pageType = pageTypes.LIGHT} = props;
+  const pathname = usePathname();
 
   const linksInfo = [
     {path: routePaths.ABOUT, label: 'About'},
@@ -125,7 +131,9 @@ function TopLinks(props) {
           src={pageType === pageTypes.DARK ? lightImage : darkImage}
         />
       </Link>
-      <div className="links-array-wrapper">{renderLinksArray(linksInfo)}</div>
+      <div className="links-array-wrapper">
+        {renderLinksArray(linksInfo, pathname)}
+      </div>
     </StyledTopLinks>
   );
 }
