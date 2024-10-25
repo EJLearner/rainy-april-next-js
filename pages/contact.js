@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import TopLinks from '../components/TopLinks';
 
-const StyledAboutPage = styled.div`
+const StyledContactPage = styled.div`
   line-height: 1.5em;
 
   h1 {
@@ -25,7 +25,7 @@ function Contact() {
       <SEO pageTitle="Contact" />
       <TopLinks />
       <ContentContainer>
-        <StyledAboutPage>
+        <StyledContactPage>
           <h1>Contact</h1>
           <div className="content">
             Rainy April Day Productions
@@ -38,7 +38,7 @@ function Contact() {
               contact-me@rainyaprilday.com
             </a>
           </div>
-        </StyledAboutPage>
+        </StyledContactPage>
       </ContentContainer>
     </Layout>
   );
