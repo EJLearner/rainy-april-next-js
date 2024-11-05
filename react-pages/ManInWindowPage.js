@@ -74,17 +74,26 @@ const StyledManInPageWindow = styled.div`
     width: 60%;
   }
 
-  .trailer-link {
-    color: var(--accent-yellow);
-    display: block;
-    letter-spacing: 2px;
+  .movie-trailer-links {
+    display: flex;
+    font-weight: 500;
+    gap: 2em;
     margin-top: 1em;
-    text-decoration: none;
-    text-transform: uppercase;
+    text-shadow: 0.5px 0.5px;
+
+    a {
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
-  .trailer-link:hover {
-    text-decoration: underline;
+  .movie-link {
+    color: var(--accent-yellow);
   }
 
   .join-action {
@@ -194,14 +203,24 @@ const ManInWindowPage = () => {
                     of a crime he did not commit, he receives help from an
                     unlikely ally. But should he bet his life on this new ally?
                   </p>
-                  <a
-                    className="trailer-link"
-                    href="https://www.youtube.com/watch?v=5kPMryUaLmY"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Watch Trailer
-                  </a>
+                  <div className="movie-trailer-links">
+                    <a
+                      className="movie-link"
+                      href="https://youtu.be/ZIwbVnfYcow"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Watch Movie
+                    </a>
+                    <a
+                      className="trailer-link"
+                      href="https://www.youtube.com/watch?v=5kPMryUaLmY"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Watch Trailer
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
