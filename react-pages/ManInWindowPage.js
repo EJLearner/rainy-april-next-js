@@ -16,7 +16,7 @@ import proposalAndMarketingPicture from '../images/tmitw-pre-production-artifact
 import donorsStore from '../stores/donorsStore';
 import routePaths from '../utils/routePaths';
 
-const tmitwBackgroundPublicSource = '/tmitw-background.jpg';
+const tmitwBackgroundPublicSource = '/tmitw-man-background.jpg';
 
 const StyledManInPageWindow = styled.div`
   color: var(--white);
@@ -52,6 +52,14 @@ const StyledManInPageWindow = styled.div`
   }
 
   .top-content {
+    background-color: rgba(0, 0, 0);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 20%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
     padding-left: var(--gutter-width);
     padding-right: var(--gutter-width);
     padding-bottom: 64px;
@@ -61,6 +69,7 @@ const StyledManInPageWindow = styled.div`
   h1 {
     font-weight: normal;
     font-size: clamp(20px, 4vw, 44px);
+    margin-top: 1em;
   }
 
   .subheading {
