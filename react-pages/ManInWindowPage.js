@@ -7,8 +7,8 @@ import Layout from '../components/Layout';
 import PrevNextPageButton from '../components/PrevNextPageButton';
 import SEO from '../components/SEO';
 import TopLinks, {pageTypes} from '../components/TopLinks';
-import twinCitiesLaurel from '../images/2022-TwinCities-laurel.png';
 import bibffLaurel from '../images/2024-BIBFF-laurel.png';
+import twinCitiesLaurel from '../images/2024-TwinCities-laurel.png';
 import auditionsPicture from '../images/auditions.png';
 import crewBiosPicture from '../images/crew-bios-thumb.jpg';
 import crewFilmTalkPicture from '../images/crew-film-talk.png';
@@ -36,10 +36,6 @@ const StyledManInPageWindow = styled.div`
   .laurels {
     display: flex;
     justify-content: space-around;
-
-    img:first-child {
-      filter: invert(1);
-    }
 
     img {
       width: clamp(150px, 20vw, 250px);
@@ -204,7 +200,8 @@ const StyledManInPageWindow = styled.div`
       background-image: none;
     }
 
-    .gradient-mask .laurels img {
+    .gradient-mask .laurels img:nth-child(2) {
+      // make the second laurel light colored when the background is black
       filter: invert(1);
     }
   }
@@ -220,11 +217,11 @@ const ManInWindowPage = () => {
             <div className="gradient-mask">
               <TopLinks isHome pageType={pageTypes.DARK} />
               <div className="laurels">
-                {/* <Image
-                  alt="2022 Twin Cities Black Film Festival Laurel"
+                <Image
+                  alt="2024 Twin Cities Black Film Festival Laurel"
                   src={twinCitiesLaurel}
                   width={250}
-                /> */}
+                />
                 <Image
                   alt="2024 Baltimore International Black Film Festival Laurel"
                   src={bibffLaurel}
